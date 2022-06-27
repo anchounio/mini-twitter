@@ -1,0 +1,38 @@
+main.ExerciseCreate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+main.ExerciseCreate > form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+main.ExerciseCreate > form > textarea {
+  width: 600px;
+  height: 100px;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+}
+
+main.ExerciseCreate > form > input {
+  margin-bottom: 1rem;
+}
+
+main.ExerciseCreate > form > button {
+  width: 80px;
+  border: 1px solid gray;
+  align-self: center;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+main.ExerciseCreate > p.Error {
+  margin-top: 1.5rem;
+  color: rgb(187, 36, 36);
+}

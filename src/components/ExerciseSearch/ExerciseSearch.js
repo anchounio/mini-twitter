@@ -6,6 +6,8 @@ const ExerciseSearch = () => {
   const [token] = useToken();
 
   const [keyword, setKeyword] = useState('');
+  const [typology, setTypology] = useState('');
+  const [muscular, setMuscular] = useState('');
   const [loading, setLoading] = useState(false);
   const [exercises, setExercises] = useState(null);
   const [update, setUpdate] = useState(false);
@@ -28,7 +30,7 @@ const ExerciseSearch = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:4000/exercises?typology=${keyword1}&muscular=${keyword2}`,
+        `http://localhost:4000/exercises/?keyword=${typology}&keyword=${muscular}`,
         {
           method: 'GET',
           headers: {
@@ -146,23 +148,23 @@ const ExerciseSearch = () => {
           name='keyword'
           onChange={(e) => setKeyword(e.target.value)}
         />
-        {/* <select name='typology'>
-          <option value='value1' selected></option>
-          <option value='value2'>aerobico</option>
-          <option value='value3'>anaerobico</option>
-          <option value='value4'>flexibilidad</option>
-          <option value='value5'>resistencia</option>
+        <select name='typology' onChange={(e) => setTypology(e.target.value)}>
+          <option value='' defaultValue></option>
+          <option value='aerobico'>aerobico</option>
+          <option value='anaerobico'>anaerobico</option>
+          <option value='flexibilidad'>flexibilidad</option>
+          <option value='resistencia'>resistencia</option>
         </select>
 
-        <select name='muscular'>
-          <option value='value1' selected></option>
-          <option value='value2'>Brazos</option>
-          <option value='value3'>Piernas</option>
-          <option value='value4'>Espalda</option>
-          <option value='value5'>Pecho</option>
-        </select> */}
+        <select name='muscular' onChange={(e) => setMuscular(e.target.value)}>
+          <option value='value' defaultValue></option>
+          <option value='Brazos'>Brazos</option>
+          <option value='Piernas'>Piernas</option>
+          <option value='Espalda'>Espalda</option>
+          <option value='Pecho'>Pecho</option>
+        </select>
 
-        <label for='cars'>Choose a car:</label>
+        {/* <label for='cars'>Choose a car:</label>
         <select name='cars' id='cars' multiple>
           <optgroup label='Swedish Cars'>
             <option value='volvo'>Volvo</option>
@@ -172,7 +174,7 @@ const ExerciseSearch = () => {
             <option value='mercedes'>Mercedes</option>
             <option value='audi'>Audi</option>
           </optgroup>
-        </select>
+        </select> */}
 
         <button disabled={loading}>Buscar</button>
       </form>
@@ -181,17 +183,16 @@ const ExerciseSearch = () => {
 
       {exercises && (
         <ul className='ExerciseList'>
-          {exercises.map((tweet) => {
+          {exercises.map((exercise) => {
             return (
-              <li key={tweet.id} data-id={tweet.id}>
-                <header>
-                  <p>@{tweet.username}</p>
-                </header>
+              <li key={exercise.id} data-id={exercise.id}>
                 <div>
-                  <p>{tweet.text}</p>
-                  {tweet.image && (
+                  <p>{exercise.name}</p>
+                  <p>{exercise.typology}</p>
+                  <p>{exercise.muscularGroup}</p>
+                  {exercise.photo && (
                     <img
-                      src={`http://localhost:4000/${tweet.image}`}
+                      src={`http://localhost:4000/${exercise.photo}`}
                       alt='Imagen adjunta'
                     />
                   )}
@@ -200,13 +201,13 @@ const ExerciseSearch = () => {
                   <div>
                     <div
                       className={`heart ${
-                        token && tweet.likedByMe && 'IsAnimating'
+                        token && exercise.likedByMe && 'IsAnimating'
                       }`}
                       onClick={token && handleLike}
                     ></div>
-                    <p>{tweet.likes} likes</p>
+                    <p>{exercise.likes} likes</p>
                   </div>
-                  {token && tweet.owner === 1 && (
+                  {token && exercise.owner === 1 && (
                     <button onClick={handleDeleteExercise}>Eliminar</button>
                   )}
                 </footer>
