@@ -78,18 +78,18 @@ const ExerciseCreate = () => {
         <input
           type='text'
           onChange={(e) => {
-            setName(e.target.value);
+            setTypology(e.target.value);
           }}
         />
         <input
           type='text'
           onChange={(e) => {
-            setTypology(e.target.value);
+            setMuscularGroup(e.target.value);
           }}
         />
         <textarea
           value={description}
-          onChange={(e) => setMuscularGroup(e.target.value)}
+          onChange={(e) => setDescription(e.target.value)}
         />
 
         <button disabled={loading}>Enviar</button>
