@@ -1,0 +1,28 @@
+main.Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+main.Login > form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+main.Login > form > input {
+    margin-bottom: 1rem;
+}
+
+main.Login > p {
+    margin-top: 1.5rem;
+}
+
+main.Login > p.Error {
+    color: rgb(187, 36, 36);
+}
+
+main.Login > p.Success {
+    color: green;
+}

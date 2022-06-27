@@ -1,0 +1,113 @@
+main.ExerciseSearch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+main.ExerciseSearch > form {
+  display: flex;
+  margin-top: 2rem;
+}
+
+main.ExerciseSearch > form > input {
+  height: 40px;
+  width: 250px;
+  padding: 0.2rem;
+  font-size: 1.3rem;
+  border: 1px solid rgb(118, 118, 118);
+}
+
+main.ExerciseSearch > form > button {
+  height: 40px;
+  padding: 0 0.4rem;
+  border: 1px solid rgb(118, 118, 118);
+  border-left: none;
+}
+
+main.ExerciseSearch > p.Error {
+  margin-top: 1.5rem;
+}
+
+ul.ExerciseList {
+  margin-top: 2rem;
+  list-style: none;
+}
+
+ul.ExerciseList > li {
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.374);
+}
+
+ul.ExerciseList > li:not(:first-child) {
+  margin: 1rem 0;
+}
+
+ul.ExerciseList > li > header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: rgb(230, 230, 230);
+}
+
+ul.ExerciseList > li > div {
+  display: flex;
+  flex-direction: column;
+}
+
+ul.ExerciseList > li > div > p {
+  padding: 1rem;
+}
+
+ul.ExerciseList > li > div > img {
+  width: 100%;
+}
+
+ul.ExerciseList > li > footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul.ExerciseList > li > footer > div {
+  display: flex;
+  align-items: center;
+}
+
+ul.ExerciseList > li > footer > div > div.heart {
+  cursor: pointer;
+  height: 70px;
+  width: 70px;
+  background-image: url('/public/heart_animation.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 2900%;
+}
+
+ul.ExerciseList > li > footer > div > div.heart:hover {
+  background-position: right;
+}
+
+ul.ExerciseList > li > footer > div > div.heart.IsAnimating {
+  animation: heart-burst 0.8s steps(28) 1;
+  animation-fill-mode: forwards;
+}
+
+ul.ExerciseList > li > footer > button {
+  width: 80px;
+  margin-right: 1rem;
+  border: 1px solid gray;
+  align-self: center;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes heart-burst {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}

@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-color: #1da1f2;
+}
+
+p.Error {
+    color: rgb(187, 36, 36);
+}

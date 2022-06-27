@@ -1,0 +1,49 @@
+div.App > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--blue-color);
+    padding: 2rem;
+    color: white;
+}
+
+div.App > header a {
+    text-decoration: none;
+    color: white;
+}
+
+div.Buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+div.Buttons > p {
+    align-self: center;
+    font-weight: bold;
+}
+
+div.Buttons > div.Button {
+    padding: 0.5rem 0;
+    width: 80px;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+div.Buttons > div.Button:active {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+div.Buttons > div.Button:first-child {
+    margin-right: 1rem;
+}
+
+div.Buttons > div.Button a {
+    text-decoration: none;
+    color: black;
+}
+
+div.Buttons > div.Button > p {
+    color: black;
+}

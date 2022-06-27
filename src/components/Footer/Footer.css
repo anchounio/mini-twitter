@@ -1,0 +1,9 @@
+div.App > footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--blue-color);
+    color: white;
+}

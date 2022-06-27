@@ -1,0 +1,24 @@
+main.Register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+main.Register > form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+main.Register > form > input {
+    margin-bottom: 1rem;
+}
+
+main.Register > p {
+    margin-top: 1.5rem;
+}
+
+main.Register > p.Success {
+    color: green;
+}
